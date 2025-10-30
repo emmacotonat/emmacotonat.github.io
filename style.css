@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
+  background: linear-gradient(-45deg, #FF715B, #F9CB40, #BCED09, #2C2C54);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color: #2C2C54;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+main {
+  max-width: 700px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 0.4em;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.8em;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 2em;
+}
+
+.links a {
+  display: inline-block;
+  margin: 0.4em;
+  padding: 0.6em 1.4em;
+  border-radius: 8px;
+  background: #2C2C54;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.links a:hover {
+  background: #FF715B;
+  transform: scale(1.1);
+}
