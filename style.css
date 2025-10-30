@@ -1,63 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+/* Tipografies */
+:root{
+  --fg:#1f2030;
+  --card-bg: rgba(255,255,255,0.75);
+  --card-br: 22px;
+  --shadow: 0 10px 40px rgba(0,0,0,.15);
 
-body {
-  margin: 0;
-  height: 100vh;
+  /* Paleta degradat: rosa, vermell, taronja, verd, granat */
+  --c1:#ff6699;  /* pink */
+  --c2:#e63946;  /* red */
+  --c3:#ff9f1c;  /* orange */
+  --c4:#2ec4b6;  /* greenish-turquoise */
+  --c5:#6a1b3f;  /* maroon */
+}
+
+/* Fons degradat animat */
+html,body{
+  height:100%;
+}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--fg);
+  background: linear-gradient(120deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
+  background-size: 300% 300%;
+  animation: gradientMove 18s ease infinite;
+}
+
+@keyframes gradientMove{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+/* Top bar amb hora/data */
+.topbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-family: 'Space Grotesk', sans-serif;
-  text-align: center;
-  background: linear-gradient(-45deg, #FF715B, #F9CB40, #BCED09, #2C2C54);
-  background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
-  color: #2C2C54;
-}
-
-@keyframes gradientMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-main {
-  max-width: 700px;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.1);
-}
-
-h1 {
-  font-size: 2.8rem;
+  padding: .6rem 1rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
   font-weight: 600;
-  margin-bottom: 0.4em;
+  letter-spacing: .2px;
 }
 
-.subtitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 0.8em;
+/* Layout principal */
+.wrap{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  padding: 5rem 1rem 3rem;
 }
 
-.tagline {
-  font-size: 1rem;
-  color: #222;
-  margin-bottom: 2em;
+/* Targeta central */
+.card{
+  width:min(680px, 92vw);
+  background: var(--card-bg);
+  border-radius: var(--card-br);
+  box-shadow: var(--shadow);
+  padding: clamp(1.2rem, 4vw, 2.4rem);
+  text-align:center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-.links a {
-  display: inline-block;
-  margin: 0.4em;
-  padding: 0.6em 1.4em;
-  border-radius: 8px;
-  background: #2C2C54;
-  color: white;
-  text-decoration: none;
-  transition: transform 0.3s, background 0.3s;
+/* Avatar */
+.avatar{
+  width:120px; height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin: 0 auto 1rem;
+  border: 4px solid rgba(255,255,255,.9);
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
 }
 
-.links a:hover {
-  background: #FF715B;
-  transform: scale(1.1);
+/* Títol i subtítols */
+.title{
+  margin: .4rem 0 .2rem;
+  font-family: 'Space Grotesk', Inter, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: .2px;
+}
+
+.subtitle{
+  margin: .25rem 0;
+  font-size: clamp(1rem, 2.6vw, 1.25rem);
+  line-height: 1.35;
+}
+
+.subtitle.line2{
+  font-family: 'Space Grotesk', Inter, sans-serif;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: .4px;
+}
+
+/* Socials */
+.socials{
+  margin-top: 1.2rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem .8rem;
+  justify-content:center;
+}
+
+.socials a{
+  --bg: #1f2030;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding: .55rem .9rem;
+  border-radius: 12px;
+  text-decoration:none;
+  color:#fff;
+  background: var(--bg);
+  transition: transform .2s ease, filter .2s ease, background .2s ease;
+  will-change: transform, filter;
+}
+
+.socials a:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* Icones */
+.ico{
+  width:18px; height:18px;
+  fill:#fff;
+}
+.ico.wide{
+  width:36px; height:18px;
+  fill:#4a4a4a;
+}
+.socials a span{
+  font-size:.95rem;
+}
+
+/* Responsiu petit */
+@media (max-width:420px){
+  .avatar{ width:96px; height:96px; }
+  .socials a span{ display:none; } /* només icona en pantalles molt petites */
 }
