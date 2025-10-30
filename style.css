@@ -58,7 +58,7 @@ body{
 .card{
   width:min(680px, 92vw);
   background: var(--card-bg);
-  border-radius: var(--card-br);
+  border-radius: 0;
   box-shadow: var(--shadow);
   padding: clamp(1.2rem, 4vw, 2.4rem);
   text-align:center;
@@ -100,45 +100,72 @@ body{
 }
 
 /* Socials */
-.socials{
-  margin-top: 1.2rem;
-  display:flex;
-  flex-wrap:wrap;
-  gap:.6rem .8rem;
-  justify-content:center;
+.socials {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
 }
 
-.socials a{
-  --bg: #1f2030;
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  padding: .55rem .9rem;
-  border-radius: 12px;
-  text-decoration:none;
-  color:#fff;
-  background: var(--bg);
-  transition: transform .2s ease, filter .2s ease, background .2s ease;
-  will-change: transform, filter;
+/* cada botó individual */
+.socials a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(31, 32, 48, 0.9);
+  text-decoration: none;
+  border-radius: 0; /* sense cantonades arrodonides */
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.socials a:hover{
-  transform: translateY(-2px);
-  filter: brightness(1.05);
+/* icones grans */
+.ico {
+  width: 40px;
+  height: 40px;
+  fill: #fff;
+  transition: transform 0.25s ease;
 }
 
-/* Icones */
-.ico{
-  width:18px; height:18px;
-  fill:#fff;
+/* efecte quan passes el ratolí */
+.socials a:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
 }
-.ico.wide{
-  width:36px; height:18px;
-  fill:#4a4a4a;
+
+/* amagar el text "Instagram", "LinkedIn", etc. */
+.socials a span {
+  display: none;
 }
-.socials a span{
-  font-size:.95rem;
+
+
+/* Icones grans i sense text */
+.ico {
+  width: 42px;
+  height: 42px;
+  fill: #fff;
+  transition: transform 0.25s ease;
 }
+
+/* versió per al logo UOC més ample */
+.ico.wide {
+  width: 64px;
+  height: 24px;
+  fill: #fff;
+}
+
+/* efecte d’augment al passar el ratolí */
+.socials a:hover .ico {
+  transform: scale(1.15);
+}
+
+/* amaguem el text ("Instagram", "LinkedIn", etc.) */
+.socials a span {
+  display: none;
+}
+
 
 /* Responsiu petit */
 @media (max-width:420px){
