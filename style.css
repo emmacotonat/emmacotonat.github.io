@@ -1,174 +1,171 @@
-/* Tipografies */
-:root{
-  --fg:#1f2030;
-  --card-bg: rgba(255,255,255,0.75);
-  --card-br: 22px;
-  --shadow: 0 10px 40px rgba(0,0,0,.15);
-
-  /* Paleta degradat: rosa, vermell, taronja, verd, granat */
-  --c1:#ff6699;  /* pink */
-  --c2:#e63946;  /* red */
-  --c3:#ff9f1c;  /* orange */
-  --c4:#2ec4b6;  /* greenish-turquoise */
-  --c5:#6a1b3f;  /* maroon */
+:root {
+  --fg: #1f2030;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Fons degradat animat */
-html,body{
-  height:100%;
-}
-body{
-  margin:0;
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+/* Fons Frutiger Aero */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
   color: var(--fg);
-  background: linear-gradient(120deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c5));
-  background-size: 300% 300%;
-  animation: gradientMove 18s ease infinite;
+  background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0) 40%
+    ),
+    linear-gradient(
+      120deg,
+      #2ec4b6,
+      #81ff7d,
+      #ffd166,
+      #ff5da2,
+      #00aaff
+    );
+  background-size: 400% 400%;
+  animation: gradientMove 16s ease infinite;
+  overflow: hidden;
 }
 
-@keyframes gradientMove{
-  0%{ background-position: 0% 50%; }
-  50%{ background-position: 100% 50%; }
-  100%{ background-position: 0% 50%; }
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Top bar amb hora/data */
-.topbar{
+/* Granota saltant 🐸 */
+.frog {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  width: 60px;
+  height: 60px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/62/Green_frog_icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+  animation: hop 10s infinite ease-in-out;
+}
+
+@keyframes hop {
+  0%   { transform: translate(10vw, 80vh) rotate(0deg); }
+  10%  { transform: translate(30vw, 60vh) rotate(15deg); }
+  20%  { transform: translate(50vw, 80vh) rotate(-10deg); }
+  30%  { transform: translate(70vw, 50vh) rotate(5deg); }
+  40%  { transform: translate(90vw, 75vh) rotate(-20deg); }
+  50%  { transform: translate(60vw, 85vh) rotate(10deg); }
+  60%  { transform: translate(40vw, 55vh) rotate(0deg); }
+  70%  { transform: translate(20vw, 75vh) rotate(-5deg); }
+  80%  { transform: translate(5vw, 60vh) rotate(15deg); }
+  90%  { transform: translate(25vw, 85vh) rotate(-10deg); }
+  100% { transform: translate(10vw, 80vh) rotate(0deg); }
+}
+
+/* Rellotge */
+.topbar {
   display: flex;
   justify-content: center;
-  padding: .6rem 1rem;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: .2px;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
-/* Layout principal */
-.wrap{
-  min-height:100%;
-  display:grid;
-  place-items:center;
-  padding: 5rem 1rem 3rem;
+#datetime {
+  background: rgba(31, 32, 48, 0.85);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
 }
 
 /* Targeta central */
-.card{
-  width:min(680px, 92vw);
-  background: var(--card-bg);
-  border-radius: 0;
-  box-shadow: var(--shadow);
-  padding: clamp(1.2rem, 4vw, 2.4rem);
-  text-align:center;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-/* Avatar */
-.avatar{
-  width:120px; height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  display:block;
-  margin: 0 auto 1rem;
-  border: 4px solid rgba(255,255,255,.9);
-  box-shadow: 0 6px 20px rgba(0,0,0,.18);
-}
-
-/* Títol i subtítols */
-.title{
-  margin: .4rem 0 .2rem;
-  font-family: 'Space Grotesk', Inter, sans-serif;
-  font-weight: 700;
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: .2px;
-}
-
-.subtitle{
-  margin: .25rem 0;
-  font-size: clamp(1rem, 2.6vw, 1.25rem);
-  line-height: 1.35;
-}
-
-.subtitle.line2{
-  font-family: 'Space Grotesk', Inter, sans-serif;
-  font-weight: 600;
-  text-transform: lowercase;
-  letter-spacing: .4px;
-}
-
-/* Socials */
-.socials {
-  margin-top: 1.5rem;
+.center {
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2rem 3rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: var(--shadow);
+}
+
+.title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0.2rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.line2 {
+  font-weight: 600;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Caixa inferior amb icones */
+.social-box {
+  margin-top: 2rem;
+  background: rgba(31, 32, 48, 0.85);
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
   justify-content: center;
 }
 
-/* cada botó individual */
 .socials a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 64px;
-  height: 64px;
-  background: rgba(31, 32, 48, 0.9);
+  width: 54px;
+  height: 54px;
+  background: #1f2030;
   text-decoration: none;
-  border-radius: 0; /* sense cantonades arrodonides */
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-/* icones grans */
-.ico {
-  width: 40px;
-  height: 40px;
-  fill: #fff;
-  transition: transform 0.25s ease;
-}
-
-/* efecte quan passes el ratolí */
 .socials a:hover {
   transform: scale(1.1);
-  filter: brightness(1.1);
+  filter: brightness(1.2);
 }
 
-/* amagar el text "Instagram", "LinkedIn", etc. */
-.socials a span {
-  display: none;
-}
-
-
-/* Icones grans i sense text */
 .ico {
-  width: 42px;
-  height: 42px;
+  width: 28px;
+  height: 28px;
   fill: #fff;
-  transition: transform 0.25s ease;
 }
 
-/* versió per al logo UOC més ample */
 .ico.wide {
-  width: 64px;
+  width: 60px;
   height: 24px;
-  fill: #fff;
 }
 
-/* efecte d’augment al passar el ratolí */
-.socials a:hover .ico {
-  transform: scale(1.15);
-}
-
-/* amaguem el text ("Instagram", "LinkedIn", etc.) */
-.socials a span {
-  display: none;
-}
-
-
-/* Responsiu petit */
-@media (max-width:420px){
-  .avatar{ width:96px; height:96px; }
-  .socials a span{ display:none; } /* només icona en pantalles molt petites */
-}
+.socials a span { display: none; }
