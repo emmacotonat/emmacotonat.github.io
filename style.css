@@ -1,7 +1,7 @@
 :root {
   --fg: #1f2030;
-  --card-bg: rgba(255, 255, 255, 0.85);
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Fons Frutiger Aero */
@@ -9,22 +9,18 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   color: var(--fg);
-  background: radial-gradient(
-      circle at center,
-      rgba(255, 255, 255, 0.25) 0%,
-      rgba(255, 255, 255, 0) 40%
-    ),
-    linear-gradient(
-      120deg,
-      #2ec4b6,
-      #81ff7d,
-      #ffd166,
-      #ff5da2,
-      #00aaff
-    );
+  background: radial-gradient(circle at top center,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 40%),
+    linear-gradient(135deg,
+      #5ef38c,
+      #3ec1d3,
+      #ff9f1c,
+      #ff4d6d,
+      #a1c4fd);
   background-size: 400% 400%;
-  animation: gradientMove 16s ease infinite;
-  overflow: hidden;
+  animation: gradientMove 18s ease infinite;
+  overflow-x: hidden;
 }
 
 @keyframes gradientMove {
@@ -33,33 +29,29 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Granota saltant 🐸 */
+/* 🐸 Granota */
 .frog {
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/62/Green_frog_icon.svg');
   background-size: contain;
   background-repeat: no-repeat;
+  opacity: 0.85;
   z-index: 0;
-  animation: hop 10s infinite ease-in-out;
+  animation: hop 14s infinite ease-in-out;
 }
 
 @keyframes hop {
-  0%   { transform: translate(10vw, 80vh) rotate(0deg); }
-  10%  { transform: translate(30vw, 60vh) rotate(15deg); }
-  20%  { transform: translate(50vw, 80vh) rotate(-10deg); }
-  30%  { transform: translate(70vw, 50vh) rotate(5deg); }
-  40%  { transform: translate(90vw, 75vh) rotate(-20deg); }
-  50%  { transform: translate(60vw, 85vh) rotate(10deg); }
-  60%  { transform: translate(40vw, 55vh) rotate(0deg); }
-  70%  { transform: translate(20vw, 75vh) rotate(-5deg); }
-  80%  { transform: translate(5vw, 60vh) rotate(15deg); }
-  90%  { transform: translate(25vw, 85vh) rotate(-10deg); }
-  100% { transform: translate(10vw, 80vh) rotate(0deg); }
+  0%   { transform: translate(5vw, 85vh) rotate(0deg); }
+  20%  { transform: translate(30vw, 65vh) rotate(10deg); }
+  40%  { transform: translate(60vw, 80vh) rotate(-15deg); }
+  60%  { transform: translate(85vw, 55vh) rotate(5deg); }
+  80%  { transform: translate(40vw, 75vh) rotate(-5deg); }
+  100% { transform: translate(5vw, 85vh) rotate(0deg); }
 }
 
-/* Rellotge */
+/* HEADER (rellotge) */
 .topbar {
   display: flex;
   justify-content: center;
@@ -79,7 +71,7 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Targeta central */
+/* CONTENIDOR PRINCIPAL */
 .center {
   min-height: 100vh;
   display: flex;
@@ -91,6 +83,7 @@ body {
   z-index: 2;
 }
 
+/* TARGETA CENTRAL */
 .card {
   background: var(--card-bg);
   padding: 2rem 3rem;
@@ -126,7 +119,7 @@ body {
   font-family: "Space Grotesk", sans-serif;
 }
 
-/* Caixa inferior amb icones */
+/* CAIXA ICONES */
 .social-box {
   margin-top: 2rem;
   background: rgba(31, 32, 48, 0.85);
@@ -168,4 +161,7 @@ body {
   height: 24px;
 }
 
-.socials a span { display: none; }
+.socials a span {
+  display: none;
+}
+
