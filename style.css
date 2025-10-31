@@ -19,18 +19,30 @@ body{
   min-height:100vh;
 }
 
-/* TOPBAR (centrada, no tapa el contenido) */
-.topbar{
-  position:fixed;
-  top:12px; left:50%; transform:translateX(-50%);
-  display:flex; align-items:center; gap:.6rem;
-  background:rgba(31,32,48,.9);
-  color:#fff; padding:.5rem .9rem;
-  border-radius:8px; box-shadow:var(--shadow);
-  z-index:20;
+/* TOPBAR (requadre hora centrada i quadrat) */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  background: rgba(31, 32, 48, .92);
+  color: #fff;
+  padding: .6rem 1rem;
+  border-radius: 0;              /* puntes quadrades */
+  box-shadow: var(--shadow);
+  font-weight: 600;
+  width: fit-content;
+  margin: 0 auto;                /* centra horitzontalment */
 }
-.dt{font-weight:700;}
-.tz{opacity:.8;}
+
+/* marge uniforme entre topbar, card i icones */
+.wrap > * + * {
+  margin-top: 24px;              /* mateixa distància entre blocs */
+}
+
+.dt { font-weight: 700; }
+.tz { opacity: .85; }
+
 
 /* CONTENIDO: centrado real en el viewport */
 .wrap{
