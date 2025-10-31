@@ -124,3 +124,59 @@ body {
 body, h1, h2, h3, h4, h5, h6, p, div, span {
   font-weight: 400 !important;
 }
+
+/* === AJUSTOS FINALS DEFINITIUS === */
+
+/* Igualar amplada dels tres blocs */
+.topbar, .card, .socialbar {
+  width: 480px !important;
+  max-width: 90vw;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+}
+
+/* Centrar verticalment */
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* Text sense negreta */
+* {
+  font-weight: 400 !important;
+  text-shadow: none !important;
+}
+
+/* Millor visibilitat de text en fons clar */
+body, .title, .subtitle, .line2, .dt, .tz {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Icones amb més presència i contrast */
+.ico {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.socials a:hover .ico {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+}
+
+/* Logo UOC */
+.ico.uoc {
+  width: 60px;
+  height: 24px;
+  border-radius: 3px;
+}
