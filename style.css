@@ -148,3 +148,23 @@ body{
 .ico.wide{ width:58px; height:22px; }
 .socials a:hover .ico{ transform:scale(1.12); }
 
+/* ICONES: millor contrast sobre fons clar translúcid */
+.ico {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.3)); /* lleu halo per contrast */
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.socials a:hover .ico {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+}
+
+/* Logo UOC especial: blau corporatiu i lletra blanca */
+.ico.uoc {
+  width: 60px;
+  height: 24px;
+  border-radius: 3px;
+}
