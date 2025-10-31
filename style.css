@@ -56,20 +56,36 @@ body{
   box-sizing:border-box;
 }
 
-/* CARD CENTRAL: més vertical, centrada i alineada amb topbar i socialbar */
+/* CARD CENTRAL: vertical a desktop i coherent a mòbil */
 .card {
-  width: min(380px, 90vw);             /* amplada reduïda: s’alinea amb topbar/socialbar */
-  background: rgba(31, 32, 48, 0.88);  /* fons fosc translúcid */
+  width: 420px;
+  max-width: 92vw;
+  background: rgba(31, 32, 48, 0.88);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0;                    /* quadrat */
+  border-radius: 0;
   box-shadow: var(--shadow);
-  padding: 2.2rem 2rem 2.4rem;         /* espai intern equilibrat */
+  padding: 2.2rem 2rem 2.4rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* mòbil: lleugerament més estret */
+@media (max-width: 600px) {
+  .card {
+    width: 90vw;
+    padding: 1.8rem 1.4rem 2rem;
+  }
+}
+
+/* escriptoris grans: una mica més ampla però segueix vertical */
+@media (min-width: 1000px) {
+  .card {
+    width: 500px;
+  }
 }
 
 .avatar {
@@ -84,7 +100,7 @@ body{
 
 .title {
   font-family: "Space Grotesk", Inter, sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
@@ -100,6 +116,7 @@ body{
   font-family: "Space Grotesk", Inter, sans-serif;
   color: #fff;
 }
+
 
 
 /* BARRA ÚNICA DE ICONOS (no cuadrados por icono) */
