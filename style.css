@@ -121,3 +121,6 @@ body {
   gap: 24px;
 }
 
+body, h1, h2, h3, h4, h5, h6, p, div, span {
+  font-weight: 400 !important;
+}
