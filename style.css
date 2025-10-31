@@ -1,97 +1,52 @@
-:root{
-  /* fondo suave tipo aero */
-  --g1:#c7ffe1;  /* verde menta muy claro arriba */
-  --g2:#9be7f5;  /* azul turquesa */
-  --g3:#a8e063;  /* verde vivo abajo */
-  --g4:#ffd27a;  /* toque cálido */
-  --fg:#1f2030;
-  --shadow:0 10px 40px rgba(0,0,0,.18);
+:root {
+  --g1: #c7ffe1;
+  --g2: #9be7f5;
+  --g3: #a8e063;
+  --g4: #ffd27a;
+  --fg: #fff;
+  --shadow: 0 10px 40px rgba(0,0,0,.15);
 }
 
-/* FONDO */
-body{
-  margin:0;
-  font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--fg);
-  background:
-    radial-gradient(1200px 400px at 50% 0%, rgba(255,255,255,.75), rgba(255,255,255,0) 60%),
-    linear-gradient(180deg,var(--g1),var(--g2) 45%, var(--g3) 75%, var(--g4) 110%);
-  min-height:100vh;
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--fg);
+  background: linear-gradient(180deg, var(--g2) 0%, var(--g3) 90%);
+  min-height: 100vh;
 }
 
-/* TOPBAR (requadre hora centrada i quadrat) */
+/* EFECTE VIDRE */
+.aero {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: var(--shadow);
+}
+
+/* TOPBAR */
 .topbar {
+  @extend .aero;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: .6rem;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #fff;
-  padding: .6rem 1rem;
-  border-radius: 0;
-  box-shadow: var(--shadow);
+  padding: .7rem 1.2rem;
   font-weight: 600;
-  width: fit-content;
-  margin: 0 auto;
-}
-
-
-/* marge uniforme entre topbar, card i icones */
-.wrap > * + * {
-  margin-top: 24px;              /* mateixa distància entre blocs */
-}
-
-.dt { font-weight: 700; }
-.tz { opacity: .85; }
-
-
-/* CONTENIDO: centrado real en el viewport */
-.wrap{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  gap:24px;
-  padding-top:70px;   /* deja espacio para el header fijo */
-  box-sizing:border-box;
-}
-
-/* CARD CENTRAL: vertical a desktop i coherent a mòbil */
-.card {
+  text-shadow: 0 0 4px rgba(0,0,0,.5);
   width: 420px;
-  max-width: 92vw;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 0; 
-  color: #fff;
-  box-shadow: var(--shadow);
-  padding: 2.2rem 2rem 2.4rem;
+}
+
+/* CARD CENTRAL */
+.card {
+  @extend .aero;
+  width: 420px;
+  padding: 2rem 1.8rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-/* mòbil: lleugerament més estret */
-@media (max-width: 600px) {
-  .card {
-    width: 90vw;
-    padding: 1.8rem 1.4rem 2rem;
-  }
-}
-
-/* escriptoris grans: una mica més ampla però segueix vertical */
-@media (min-width: 1000px) {
-  .card {
-    width: 500px;
-  }
 }
 
 .avatar {
@@ -100,7 +55,7 @@ body{
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
-  box-shadow: 0 4px 14px rgba(0,0,0,.2);
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
   margin-bottom: 1.2rem;
 }
 
@@ -108,63 +63,61 @@ body{
   font-family: "Space Grotesk", Inter, sans-serif;
   font-size: 1.9rem;
   font-weight: 700;
+  text-shadow: 0 0 6px rgba(0,0,0,0.4);
   margin-bottom: 0.3rem;
 }
 
 .subtitle {
   margin: 0.2rem 0;
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 4px rgba(0,0,0,0.4);
 }
 
 .line2 {
   font-weight: 600;
   font-family: "Space Grotesk", Inter, sans-serif;
-  color: #fff;
 }
 
-
-
-/* BARRA ÚNICA DE ICONOS (no cuadrados por icono) */
+/* SOCIALBAR */
 .socialbar {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  @extend .aero;
+  width: 420px;
   padding: 10px 14px;
-  border-radius: 0;
-  box-shadow: var(--shadow);
 }
 
-.socials{
-  display:flex; gap:14px; align-items:center; justify-content:center;
+.socials {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
-.socials a{
-  display:flex; align-items:center; justify-content:center;
-  text-decoration:none;        /* sin fondo por icono */
-  padding:6px;                 /* solo aire interno */
-}
-.ico{ width:26px; height:26px; fill:#fff; transition:transform .2s ease;}
-.ico.wide{ width:58px; height:22px; }
-.socials a:hover .ico{ transform:scale(1.12); }
 
-/* ICONES: millor contrast sobre fons clar translúcid */
 .ico {
   width: 26px;
   height: 26px;
   fill: #fff;
-  filter: drop-shadow(0 0 2px rgba(0,0,0,0.3)); /* lleu halo per contrast */
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.4));
   transition: transform .2s ease, filter .2s ease;
 }
-
 .socials a:hover .ico {
   transform: scale(1.12);
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.8));
 }
 
-/* Logo UOC especial: blau corporatiu i lletra blanca */
 .ico.uoc {
   width: 60px;
   height: 24px;
-  border-radius: 3px;
+  border-radius: 4px;
 }
+
+.wrap > * + * { margin-top: 24px; }
+
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
