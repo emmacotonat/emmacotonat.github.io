@@ -11,17 +11,41 @@ body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
   color: var(--fg);
-  background: linear-gradient(180deg, var(--g2) 0%, var(--g3) 90%);
+  background: linear-gradient(135deg, #7dd87c 0%, #5bc8f2 25%, #a1f7c8 50%, #4fc3f7 75%, #7dd87c 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
   min-height: 100vh;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* EFECTE VIDRE */
 .aero {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(100, 110, 125, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: var(--shadow);
+}
+
+/* TOPBAR CONTAINER */
+.topbar-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* TOPBAR */
@@ -54,6 +78,8 @@ body {
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center;
+  transform: scale(1.2);
   border: 3px solid #fff;
   box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
   margin-bottom: 1.2rem;
@@ -160,16 +186,42 @@ span {
 
 /* === AJUSTOS FINALS DEFINITIUS === */
 
-/* Igualar amplada dels tres blocs */
-.topbar,
+/* Igualar amplada dels blocs */
 .card,
 .socialbar {
   width: 360px !important;
   max-width: 90vw;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(100, 110, 125, 0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+}
+
+/* Los dos topbars juntos hacen 360px (280px fecha+hora + 12px gap + 68px CET = 360px) */
+.topbar-container {
+  width: 360px !important;
+  max-width: 90vw;
+  align-items: stretch;
+}
+
+.topbar-datetime {
+  width: 280px !important;
+  background: rgba(100, 110, 125, 0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+}
+
+.topbar-cet {
+  width: 68px !important;
+  background: rgba(100, 110, 125, 0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
   border-radius: 0;
 }

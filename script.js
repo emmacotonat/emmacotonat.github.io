@@ -1,4 +1,4 @@
-// Data i hora en format 31/10/2025 00:58:05
+// Data i hora juntes
 function updateDateTime() {
   const el = document.getElementById("datetime");
   const now = new Date();
