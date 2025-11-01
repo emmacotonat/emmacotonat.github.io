@@ -553,11 +553,16 @@ span {
 
 /* === AJUSTOS FINALS DEFINITIUS === */
 
-/* Igualar amplada dels blocs */
+/* Igualar amplada de todos los recuadros (340px más estrechos) */
+.topbar-container,
 .card,
 .socialbar {
-  width: 360px !important;
+  width: 340px !important;
   max-width: 90vw;
+}
+
+.card,
+.socialbar {
   background: rgba(100, 110, 125, 0.6);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -566,15 +571,13 @@ span {
   border-radius: 0;
 }
 
-/* Los dos topbars juntos hacen 360px (280px fecha+hora + 12px gap + 68px CET = 360px) */
 .topbar-container {
-  width: 360px !important;
-  max-width: 90vw;
   align-items: stretch;
 }
 
+/* Los dos topbars juntos hacen 340px (260px fecha+hora + 12px gap + 68px CET = 340px) */
 .topbar-datetime {
-  width: 280px !important;
+  width: 260px !important;
   background: rgba(100, 110, 125, 0.6);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
