@@ -15,6 +15,8 @@ body {
   background-size: 200% 200%;
   animation: gradientShift 4s ease infinite;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
 @keyframes gradientShift {
@@ -28,6 +30,371 @@ body {
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* Burbujas estilo Frutiger Aero */
+.bubbles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(155, 231, 245, 0.4));
+}
+
+.bubble-1 {
+  width: 80px;
+  height: 80px;
+  left: 10%;
+  animation: floatBubble1 20s ease-in-out infinite;
+}
+
+.bubble-2 {
+  width: 60px;
+  height: 60px;
+  left: 30%;
+  animation: floatBubble2 25s ease-in-out infinite;
+}
+
+.bubble-3 {
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  animation: floatBubble3 30s ease-in-out infinite;
+}
+
+.bubble-4 {
+  width: 70px;
+  height: 70px;
+  left: 70%;
+  animation: floatBubble4 22s ease-in-out infinite;
+}
+
+.bubble-5 {
+  width: 90px;
+  height: 90px;
+  left: 85%;
+  animation: floatBubble5 28s ease-in-out infinite;
+}
+
+.bubble-6 {
+  width: 50px;
+  height: 50px;
+  left: 20%;
+  animation: floatBubble6 24s ease-in-out infinite;
+}
+
+@keyframes floatBubble1 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(50px) scale(1.1);
+  }
+}
+
+@keyframes floatBubble2 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(-40px) scale(0.9);
+  }
+}
+
+@keyframes floatBubble3 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(60px) scale(1.15);
+  }
+}
+
+@keyframes floatBubble4 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(-50px) scale(1.05);
+  }
+}
+
+@keyframes floatBubble5 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(45px) scale(0.95);
+  }
+}
+
+@keyframes floatBubble6 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(-35px) scale(1.1);
+  }
+}
+
+/* Burbujas adicionales con diferentes direcciones y velocidades */
+.bubble-7 {
+  width: 120px;
+  height: 120px;
+  left: 15%;
+  animation: floatBubble7 35s ease-in-out infinite;
+}
+
+.bubble-8 {
+  width: 40px;
+  height: 40px;
+  left: 60%;
+  animation: floatBubble8 10s linear infinite;
+}
+
+.bubble-9 {
+  width: 140px;
+  height: 140px;
+  left: 75%;
+  animation: floatBubble9 40s ease-in-out infinite;
+}
+
+.bubble-10 {
+  width: 35px;
+  height: 35px;
+  left: 45%;
+  animation: floatBubble10 9s linear infinite;
+}
+
+.bubble-11 {
+  width: 95px;
+  height: 95px;
+  left: 25%;
+  animation: floatBubble11 28s ease-in-out infinite;
+}
+
+.bubble-12 {
+  width: 55px;
+  height: 55px;
+  left: 55%;
+  animation: floatBubble12 15s ease-in-out infinite;
+}
+
+.bubble-13 {
+  width: 150px;
+  height: 150px;
+  left: 5%;
+  animation: floatBubble13 45s ease-in-out infinite;
+}
+
+.bubble-14 {
+  width: 45px;
+  height: 45px;
+  left: 90%;
+  animation: floatBubble14 11s linear infinite;
+}
+
+.bubble-15 {
+  width: 65px;
+  height: 65px;
+  left: 35%;
+  animation: explodeBubble 8s ease-out infinite;
+}
+
+/* Burbujas que suben (abajo -> arriba) */
+@keyframes floatBubble7 {
+
+  0%,
+  100% {
+    bottom: -150px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(80px) scale(1.2);
+  }
+}
+
+@keyframes floatBubble8 {
+  0% {
+    bottom: -50px;
+    left: 60%;
+    transform: scale(1);
+  }
+
+  100% {
+    bottom: 110vh;
+    left: 65%;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes floatBubble9 {
+
+  0%,
+  100% {
+    bottom: -150px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(-70px) scale(1.15);
+  }
+}
+
+@keyframes floatBubble10 {
+  0% {
+    bottom: -50px;
+    left: 45%;
+    transform: scale(1);
+  }
+
+  100% {
+    bottom: 110vh;
+    left: 50%;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes floatBubble11 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(60px) scale(1.1);
+  }
+}
+
+/* Burbujas que bajan (arriba -> abajo) */
+@keyframes floatBubble12 {
+  0% {
+    top: -100px;
+    left: 55%;
+    transform: scale(1);
+  }
+
+  100% {
+    top: 110vh;
+    left: 60%;
+    transform: scale(0.9);
+  }
+}
+
+/* Burbujas horizontales y diagonales */
+@keyframes floatBubble13 {
+
+  0%,
+  100% {
+    bottom: 30%;
+    left: -150px;
+    transform: scale(1);
+  }
+
+  50% {
+    bottom: 50%;
+    left: 110vw;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes floatBubble14 {
+  0% {
+    top: 20%;
+    right: -50px;
+    transform: scale(1);
+  }
+
+  100% {
+    top: 70%;
+    right: 110vw;
+    transform: scale(1.05);
+  }
+}
+
+/* Burbuja que explota */
+@keyframes explodeBubble {
+  0% {
+    bottom: -100px;
+    left: 35%;
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    bottom: 50%;
+    left: 40%;
+    transform: scale(1) rotate(180deg);
+    opacity: 1;
+  }
+
+  60% {
+    bottom: 55%;
+    left: 42%;
+    transform: scale(1.2) rotate(270deg);
+    opacity: 0.8;
+  }
+
+  80% {
+    transform: scale(2.5) rotate(360deg);
+    opacity: 0.3;
+  }
+
+  100% {
+    bottom: 60%;
+    left: 45%;
+    transform: scale(3) rotate(450deg);
+    opacity: 0;
   }
 }
 
@@ -234,6 +601,8 @@ span {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Text sense negreta */
