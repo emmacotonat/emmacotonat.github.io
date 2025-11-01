@@ -4,7 +4,7 @@
   --g3: #a8e063;
   --g4: #ffd27a;
   --fg: #fff;
-  --shadow: 0 10px 40px rgba(0,0,0,.15);
+  --shadow: 0 10px 40px rgba(0, 0, 0, .15);
 }
 
 body {
@@ -17,10 +17,10 @@ body {
 
 /* EFECTE VIDRE */
 .aero {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: var(--shadow);
 }
 
@@ -33,7 +33,7 @@ body {
   gap: .6rem;
   padding: .7rem 1.2rem;
   font-weight: 600;
-  text-shadow: 0 0 4px rgba(0,0,0,.5);
+  text-shadow: 0 0 4px rgba(0, 0, 0, .5);
   width: 420px;
 }
 
@@ -55,7 +55,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
-  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
   margin-bottom: 1.2rem;
 }
 
@@ -63,14 +63,14 @@ body {
   font-family: "Space Grotesk", Inter, sans-serif;
   font-size: 1.9rem;
   font-weight: 700;
-  text-shadow: 0 0 6px rgba(0,0,0,0.4);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   margin-bottom: 0.3rem;
 }
 
 .subtitle {
   margin: 0.2rem 0;
   font-size: 1.05rem;
-  text-shadow: 0 0 4px rgba(0,0,0,0.4);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
 
 .line2 {
@@ -82,7 +82,7 @@ body {
 .socialbar {
   @extend .aero;
   width: 420px;
-  padding: 10px 14px;
+  padding: 18px 20px;
 }
 
 .socials {
@@ -92,25 +92,49 @@ body {
   align-items: center;
 }
 
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  text-decoration: none;
+  outline: none;
+  border-bottom: none;
+}
+
 .ico {
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   fill: #fff;
-  filter: drop-shadow(0 0 3px rgba(0,0,0,0.4));
+  color: #fff;
+  font-size: 36px;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
   transition: transform .2s ease, filter .2s ease;
 }
+
 .socials a:hover .ico {
   transform: scale(1.12);
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.8));
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
 }
 
-.ico.uoc {
-  width: 60px;
-  height: 24px;
-  border-radius: 4px;
+/* Icono UOC más fino usando filtros de reducción de grosor visual */
+.ico-uoc {
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4)) contrast(0.85) brightness(1.15);
+  opacity: 0.9;
+  transform: scale(0.98);
 }
 
-.wrap > * + * { margin-top: 24px; }
+.socials a:hover .ico-uoc {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) contrast(0.85) brightness(1.15);
+  opacity: 1;
+}
+
+
+.wrap>*+* {
+  margin-top: 24px;
+}
 
 .wrap {
   min-height: 100vh;
@@ -121,14 +145,25 @@ body {
   gap: 24px;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, div, span {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span {
   font-weight: 400 !important;
 }
 
 /* === AJUSTOS FINALS DEFINITIUS === */
 
 /* Igualar amplada dels tres blocs */
-.topbar, .card, .socialbar {
+.topbar,
+.card,
+.socialbar {
   width: 480px !important;
   max-width: 90vw;
   background: rgba(255, 255, 255, 0.12);
@@ -156,27 +191,27 @@ body, h1, h2, h3, h4, h5, h6, p, div, span {
 }
 
 /* Millor visibilitat de text en fons clar */
-body, .title, .subtitle, .line2, .dt, .tz {
+body,
+.title,
+.subtitle,
+.line2,
+.dt,
+.tz {
   color: rgba(255, 255, 255, 0.95) !important;
 }
 
 /* Icones amb més presència i contrast */
 .ico {
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   fill: #fff;
-  filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+  color: #fff;
+  font-size: 36px;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .socials a:hover .ico {
   transform: scale(1.12);
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
-}
-
-/* Logo UOC */
-.ico.uoc {
-  width: 60px;
-  height: 24px;
-  border-radius: 3px;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
 }
