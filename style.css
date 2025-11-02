@@ -1,0 +1,845 @@
+:root {
+  --g1: #c7ffe1;
+  --g2: #9be7f5;
+  --g3: #a8e063;
+  --g4: #ffd27a;
+  --fg: #fff;
+  --shadow: 0 10px 40px rgba(0, 0, 0, .15);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--fg);
+  background: linear-gradient(135deg, #7dd87c 0%, #5bc8f2 25%, #a1f7c8 50%, #4fc3f7 75%, #7dd87c 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Burbujas estilo Frutiger Aero */
+.bubbles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(155, 231, 245, 0.4));
+}
+
+.bubble-1 {
+  width: 80px;
+  height: 80px;
+  left: 10%;
+  animation: floatBubble1 20s ease-in-out infinite;
+}
+
+.bubble-2 {
+  width: 60px;
+  height: 60px;
+  left: 30%;
+  animation: floatBubble2 25s ease-in-out infinite;
+}
+
+.bubble-3 {
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  animation: floatBubble3 30s ease-in-out infinite;
+}
+
+.bubble-4 {
+  width: 70px;
+  height: 70px;
+  left: 70%;
+  animation: floatBubble4 22s ease-in-out infinite;
+}
+
+.bubble-5 {
+  width: 90px;
+  height: 90px;
+  left: 85%;
+  animation: floatBubble5 28s ease-in-out infinite;
+}
+
+.bubble-6 {
+  width: 50px;
+  height: 50px;
+  left: 20%;
+  animation: floatBubble6 24s ease-in-out infinite;
+}
+
+@keyframes floatBubble1 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(50px) scale(1.1);
+  }
+}
+
+@keyframes floatBubble2 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(-40px) scale(0.9);
+  }
+}
+
+@keyframes floatBubble3 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(60px) scale(1.15);
+  }
+}
+
+@keyframes floatBubble4 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(-50px) scale(1.05);
+  }
+}
+
+@keyframes floatBubble5 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(45px) scale(0.95);
+  }
+}
+
+@keyframes floatBubble6 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(-35px) scale(1.1);
+  }
+}
+
+/* Burbujas adicionales con diferentes direcciones y velocidades */
+.bubble-7 {
+  width: 120px;
+  height: 120px;
+  left: 15%;
+  animation: floatBubble7 35s ease-in-out infinite;
+}
+
+.bubble-8 {
+  width: 40px;
+  height: 40px;
+  left: 60%;
+  animation: floatBubble8 10s linear infinite;
+}
+
+.bubble-9 {
+  width: 140px;
+  height: 140px;
+  left: 75%;
+  animation: floatBubble9 40s ease-in-out infinite;
+}
+
+.bubble-10 {
+  width: 35px;
+  height: 35px;
+  left: 45%;
+  animation: floatBubble10 9s linear infinite;
+}
+
+.bubble-11 {
+  width: 95px;
+  height: 95px;
+  left: 25%;
+  animation: floatBubble11 28s ease-in-out infinite;
+}
+
+.bubble-12 {
+  width: 55px;
+  height: 55px;
+  left: 55%;
+  animation: floatBubble12 15s ease-in-out infinite;
+}
+
+.bubble-13 {
+  width: 150px;
+  height: 150px;
+  left: 5%;
+  animation: floatBubble13 45s ease-in-out infinite;
+}
+
+.bubble-14 {
+  width: 45px;
+  height: 45px;
+  left: 90%;
+  animation: floatBubble14 11s linear infinite;
+}
+
+.bubble-15 {
+  width: 65px;
+  height: 65px;
+  left: 35%;
+  animation: explodeBubble 8s ease-out infinite;
+}
+
+/* Burbujas que suben (abajo -> arriba) */
+@keyframes floatBubble7 {
+
+  0%,
+  100% {
+    bottom: -150px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(80px) scale(1.2);
+  }
+}
+
+@keyframes floatBubble8 {
+  0% {
+    bottom: -50px;
+    left: 60%;
+    transform: scale(1);
+  }
+
+  100% {
+    bottom: 110vh;
+    left: 65%;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes floatBubble9 {
+
+  0%,
+  100% {
+    bottom: -150px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(-70px) scale(1.15);
+  }
+}
+
+@keyframes floatBubble10 {
+  0% {
+    bottom: -50px;
+    left: 45%;
+    transform: scale(1);
+  }
+
+  100% {
+    bottom: 110vh;
+    left: 50%;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes floatBubble11 {
+
+  0%,
+  100% {
+    bottom: -100px;
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    bottom: 110vh;
+    transform: translateX(60px) scale(1.1);
+  }
+}
+
+/* Burbujas que bajan (arriba -> abajo) */
+@keyframes floatBubble12 {
+  0% {
+    top: -100px;
+    left: 55%;
+    transform: scale(1);
+  }
+
+  100% {
+    top: 110vh;
+    left: 60%;
+    transform: scale(0.9);
+  }
+}
+
+/* Burbujas horizontales y diagonales */
+@keyframes floatBubble13 {
+
+  0%,
+  100% {
+    bottom: 30%;
+    left: -150px;
+    transform: scale(1);
+  }
+
+  50% {
+    bottom: 50%;
+    left: 110vw;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes floatBubble14 {
+  0% {
+    top: 20%;
+    right: -50px;
+    transform: scale(1);
+  }
+
+  100% {
+    top: 70%;
+    right: 110vw;
+    transform: scale(1.05);
+  }
+}
+
+/* Burbuja que explota */
+@keyframes explodeBubble {
+  0% {
+    bottom: -100px;
+    left: 35%;
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    bottom: 50%;
+    left: 40%;
+    transform: scale(1) rotate(180deg);
+    opacity: 1;
+  }
+
+  60% {
+    bottom: 55%;
+    left: 42%;
+    transform: scale(1.2) rotate(270deg);
+    opacity: 0.8;
+  }
+
+  80% {
+    transform: scale(2.5) rotate(360deg);
+    opacity: 0.3;
+  }
+
+  100% {
+    bottom: 60%;
+    left: 45%;
+    transform: scale(3) rotate(450deg);
+    opacity: 0;
+  }
+}
+
+/* EFECTE VIDRE */
+.aero {
+  background: rgba(100, 110, 125, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: var(--shadow);
+}
+
+/* TOPBAR CONTAINER */
+.topbar-container {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* TOPBAR */
+.topbar {
+  @extend .aero;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .6rem;
+  padding: .7rem 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(0, 0, 0, .5);
+  width: 420px;
+}
+
+/* CARD CENTRAL */
+.card {
+  @extend .aero;
+  width: 420px;
+  padding: 2rem 1.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.2);
+  border: 3px solid #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+  margin-bottom: 1.2rem;
+}
+
+.title {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.line2 {
+  font-weight: 600;
+  font-family: "Space Grotesk", Inter, sans-serif;
+}
+
+/* SOCIALBAR */
+.socialbar {
+  @extend .aero;
+  width: 420px;
+  padding: 18px 20px;
+}
+
+.socials {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  text-decoration: none;
+  outline: none;
+  border-bottom: none;
+}
+
+.ico {
+  width: 36px;
+  height: 36px;
+  fill: #fff;
+  color: #fff;
+  font-size: 36px;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.socials a:hover .ico {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+/* Icono UOC más fino usando filtros de reducción de grosor visual */
+.ico-uoc {
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4)) contrast(0.85) brightness(1.15);
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+.socials a:hover .ico-uoc {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) contrast(0.85) brightness(1.15);
+  opacity: 1;
+}
+
+
+/* Eliminar márgenes automáticos y usar gap consistente */
+.wrap>*+* {
+  margin-top: 0;
+}
+
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span {
+  font-weight: 400 !important;
+}
+
+/* === AJUSTOS FINALS DEFINITIUS === */
+
+/* Estandarizar estilos de bordes y fondos para todos los componentes */
+.card,
+.socialbar,
+.topbar-datetime,
+.topbar-cet,
+.poll-container {
+  background: rgba(100, 110, 125, 0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+/* Igualar ancho de todos los componentes principales (340px) */
+.card,
+.socialbar,
+.poll-container {
+  width: 340px !important;
+  max-width: 90vw;
+}
+
+/* Topbar container con gap para separar los recuadros */
+.topbar-container {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  justify-content: center;
+  width: fit-content;
+  max-width: 90vw;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+}
+
+/* Ajustar anchos considerando el gap (340px total - 8px gap = 332px para los dos recuadros) */
+.topbar-datetime {
+  width: 256px !important;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.topbar-cet {
+  width: 76px !important;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Eliminar márgenes y paddings inconsistentes */
+.topbar-datetime,
+.topbar-cet {
+  margin: 0;
+  padding: .7rem 1.2rem;
+}
+
+/* Centrar verticalment */
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Text sense negreta */
+* {
+  font-weight: 400 !important;
+  text-shadow: none !important;
+}
+
+/* Millor visibilitat de text en fons clar */
+body,
+.title,
+.subtitle,
+.line2,
+.dt,
+.tz {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Icones amb més presència i contrast */
+.ico {
+  width: 36px;
+  height: 36px;
+  fill: #fff;
+  color: #fff;
+  font-size: 36px;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.socials a:hover .ico {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+}
+
+/* ENQUESTA */
+.poll-container {
+  padding: 0.6rem 1.4rem 1rem 1.4rem;
+  text-align: center;
+  display: none;
+  /* Oculto - cambiar a 'flex' para activar */
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.poll-question {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  font-family: Inter, system-ui, sans-serif;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.poll-buttons {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.poll-btn {
+  flex: 1;
+  height: 20px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(199, 255, 225, 0.25) 0%, rgba(155, 231, 245, 0.25) 50%, rgba(91, 200, 242, 0.25) 100%);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.7rem;
+  font-weight: 400;
+  font-family: Inter, system-ui, sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: lowercase;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+.poll-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, rgba(199, 255, 225, 0.35) 0%, rgba(155, 231, 245, 0.35) 50%, rgba(91, 200, 242, 0.35) 100%);
+  filter: drop-shadow(0 4px 12px rgba(155, 231, 245, 0.25));
+}
+
+.poll-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.poll-btn:hover {
+  background: linear-gradient(135deg, rgba(199, 255, 225, 0.35) 0%, rgba(155, 231, 245, 0.35) 50%, rgba(91, 200, 242, 0.35) 100%);
+  filter: drop-shadow(0 4px 12px rgba(155, 231, 245, 0.25));
+}
+
+.poll-results {
+  width: 100%;
+  margin-top: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.poll-result-bar {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0;
+  background: linear-gradient(135deg, rgba(199, 255, 225, 0.25) 0%, rgba(155, 231, 245, 0.25) 50%, rgba(91, 200, 242, 0.25) 100%);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+.poll-result-yes {
+  background: linear-gradient(135deg, rgba(168, 224, 99, 0.3) 0%, rgba(145, 220, 110, 0.25) 30%, rgba(125, 216, 124, 0.2) 60%, rgba(115, 217, 165, 0.15) 85%, rgba(105, 217, 185, 0.1) 100%);
+  height: 100%;
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.7rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+  border-radius: 10px 0 0 10px;
+  line-height: 1;
+}
+
+.poll-result-no {
+  background: transparent;
+  height: 100%;
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.7rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 400;
+  text-transform: lowercase;
+  border-radius: 0 10px 10px 0;
+  line-height: 1;
+}
+
+/* Ajuste moderado de tamaño en ordenador */
+@media (min-width: 768px) {
+
+  .card,
+  .socialbar,
+  .poll-container,
+  .topbar-container {
+    width: 400px !important;
+    max-width: 90vw;
+  }
+
+  .topbar-datetime {
+    width: 304px !important;
+  }
+
+  .topbar-cet {
+    width: 88px !important;
+  }
+
+  /* Aumentar tipografía moderadamente */
+  .title {
+    font-size: 2.1rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .poll-question {
+    font-size: 1rem;
+  }
+
+  /* Aumentar avatar moderadamente */
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Aumentar padding moderadamente */
+  .card {
+    padding: 2.2rem 2rem;
+  }
+
+  .socialbar {
+    padding: 20px 22px;
+  }
+
+  .poll-container {
+    padding: 0.7rem 1.6rem 1.1rem 1.6rem;
+  }
+
+  /* Mantener iconos */
+  .ico {
+    width: 38px;
+    height: 38px;
+    font-size: 38px;
+  }
+
+  .socials {
+    gap: 24px;
+  }
+}

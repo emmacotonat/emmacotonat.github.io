@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emma Cotonat</title>
+  <link rel="icon" type="image/png" href="bubble.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <!-- Burbujas estilo Frutiger Aero -->
+  <div class="bubbles-container">
+    <img src="bubble.png" alt="" class="bubble bubble-1">
+    <img src="bubble.png" alt="" class="bubble bubble-2">
+    <img src="bubble.png" alt="" class="bubble bubble-3">
+    <img src="bubble.png" alt="" class="bubble bubble-4">
+    <img src="bubble.png" alt="" class="bubble bubble-5">
+    <img src="bubble.png" alt="" class="bubble bubble-6">
+    <img src="bubble.png" alt="" class="bubble bubble-7">
+    <img src="bubble.png" alt="" class="bubble bubble-8">
+    <img src="bubble.png" alt="" class="bubble bubble-9">
+    <img src="bubble.png" alt="" class="bubble bubble-10">
+    <img src="bubble.png" alt="" class="bubble bubble-11">
+    <img src="bubble.png" alt="" class="bubble bubble-12">
+    <img src="bubble.png" alt="" class="bubble bubble-13">
+    <img src="bubble.png" alt="" class="bubble bubble-14">
+    <img src="bubble.png" alt="" class="bubble bubble-15">
+  </div>
+
+  <main class="wrap">
+
+    <!-- TOPBAR -->
+    <section class="topbar-container">
+      <section class="topbar topbar-datetime">
+        <div id="datetime" class="dt"></div>
+      </section>
+      <section class="topbar topbar-cet">
+        <div class="tz">CET</div>
+      </section>
+    </section>
+
+    <!-- CARD CENTRAL -->
+    <section class="card">
+      <img src="profile.jpg" alt="Emma Cotonat" class="avatar" />
+      <h1 class="title">Emma Cotonat</h1>
+      <p class="subtitle">where sociology meets machine learning</p>
+      <p class="subtitle line2">decoding & mapping </p>
+    </section>
+
+    <!-- ENQUESTA -->
+    <section class="poll-container">
+      <p class="poll-question">Is it possible to debug society??</p>
+      <div class="poll-buttons">
+        <button class="poll-btn poll-btn-yes" id="poll-yes">yes</button>
+        <button class="poll-btn poll-btn-no" id="poll-no">no</button>
+      </div>
+      <div class="poll-results" id="poll-results" style="display: none;">
+        <div class="poll-result-bar">
+          <div class="poll-result-yes" id="poll-result-yes"></div>
+          <div class="poll-result-no" id="poll-result-no"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BARRA D'ICONES -->
+    <section class="socialbar">
+      <nav class="socials">
+        <!-- <a href="https://www.youtube.com/@emmacotonat" target="_blank" aria-label="YouTube">
+          <i class="fa-brands fa-youtube ico"></i>
+        </a> -->
+
+        <a href="https://www.tiktok.com/@emmacotonat" target="_blank" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok ico"></i>
+        </a>
+
+        <a href="https://www.instagram.com/emmacotonat/" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram ico"></i>
+        </a>
+
+        <a href="https://github.com/emmacotonat" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github ico"></i>
+        </a>
+
+        <a href="https://emmacotonat.folio.uoc.edu/?lang=ca" target="_blank" aria-label="UOC">
+          <i class="fa-regular fa-newspaper ico ico-uoc"></i>
+        </a>
+      </nav>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
